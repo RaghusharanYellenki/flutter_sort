@@ -1,29 +1,19 @@
 # flutter_sort
 
-SCREENSHOTS 
+A new Flutter project.
 
+## Getting Started
 
+This project is a starting point for a Flutter application.
 
-1.Main screen
+A few resources to get you started if this is your first Flutter project:
 
-![Screenshot_1670570455](https://user-images.githubusercontent.com/82712982/206647851-872db130-0c24-4295-b139-d4182b682d2a.png)
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-
-2.LOGIN screen
-
-![2 icon-2](ht![Screenshot_1670570459](https://user-images.githubusercontent.com/82712982/206647864-c3ad94c6-b86e-4759-94b9-8e5ad9b9c22c.png)
-
-3. REGISTER Screen
-
-![Screenshot_1670570462](https://user-images.githubusercontent.com/82712982/206648142-452f5d5a-2cdb-44bd-b3cb-2d58e00986f9.png)
-
-
-4.List screen
-
-
-
-Thanks and I appreciate your patience for your interest to view my Project
-
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
 
 
