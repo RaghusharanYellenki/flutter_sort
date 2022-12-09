@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_task_finn/screens/list_screen.dart';
 import 'package:flutter_task_finn/screens/register.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -38,8 +39,7 @@ class _LoginState extends State<Login> {
         await _auth.signInWithEmailAndPassword(
             email: email!, password: password!);
       } catch (e) {
-        print(e);
-      }
+        Fluttertoast.showToast(msg: e.toString());      }
     }
   }
 

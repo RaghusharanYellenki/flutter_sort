@@ -1,9 +1,9 @@
 [
    {
       "id":0,
-      "name":"Ram",
+      "name":"Aarav",
       "age": 18,
-      "city":"Hyderabad"
+      "city":"Agra"
    },
    {
       "id":1,
@@ -13,9 +13,9 @@
    },
    {
       "id":2,
-      "name":"Sunny",
+      "name":"Cherry",
       "age":22,
-      "city":"Karimnagar"
+      "city":"Agra"
    },
    {
       "id":3,
@@ -25,7 +25,7 @@
    },
    {
       "id":4,
-      "name":"Shami",
+      "name":"Esha",
       "age":45,
       "city":"Karimnagar"
    },
@@ -33,35 +33,35 @@
       "id":5,
       "name":"Dhoni",
       "age":40,
-      "city":"Karimnagar"
+      "city":"Bangalore"
    },
    {
       "id":6,
       "name":"Zoel",
       "age":13,
-      "city":"Warangal"
+      "city":"Chennai"
    },
    {
       "id":7,
       "name":"Saint",
       "age":22,
-      "city":"Hyderabad"
+      "city":"Bangalore"
    },
    {
       "id":8,
-      "name":"Suchitha",
+      "name":"Faizan",
       "age":30,
-      "city":"Karimnagar"
+      "city":"Delhi"
    },
    {
       "id":9,
       "name":"Rithu",
       "age":80,
-      "city":"Warangal"
+      "city":"Chennai"
    },
    {
       "id":10,
-      "name":"Ramraj",
+      "name":"Glory",
       "age":8,
       "city":"Hyderabad"
    },
@@ -69,13 +69,13 @@
       "id":11,
       "name":"Taruni",
       "age":38,
-      "city":"Warangal"
+      "city":"Nalgonda"
    },
    {
       "id":12,
-      "name":"Srihaan",
+      "name":"Hari",
       "age":22,
-      "city":"Karimnagar"
+      "city":"Lonovola"
    },
    {
       "id":13,
@@ -85,27 +85,27 @@
    },
    {
       "id":14,
-      "name":"Rahul",
+      "name":"Indra",
       "age":25,
-      "city":"Karimnagar"
+      "city":"Siddipet"
    },
    {
       "id":15,
       "name":"MSD",
       "age":44,
-      "city":"Karimnagar"
+      "city":"Nalgonda"
    },
    {
       "id":16,
       "name":"Yaseen",
       "age":13,
-      "city":"Warangal"
+      "city":"Delhi"
    },
    {
       "id":17,
       "name":"Brahmi",
       "age":62,
-      "city":"Hyderabad"
+      "city":"Siddipet"
    },
    {
       "id":18,
@@ -115,8 +115,45 @@
    },
    {
       "id":19,
-      "name":"Raghu",
+      "name":"Joker",
       "age": 23,
+      "city":"Delhi"
+   },
+   {
+   "id":20,
+   "name":"Kohli",
+   "age":2,
+   "city":"Delhi"
+},
+   {
+      "id":21,
+      "name":"MSD",
+      "age":44,
+      "city":"Nalgonda"
+   },
+   {
+      "id":22,
+      "name":"Yaseen",
+      "age":13,
+      "city":"Goa"
+   },
+   {
+      "id":23,
+      "name":"Brahmi",
+      "age":80,
+      "city":"Lonovola"
+   },
+   {
+      "id":24,
+      "name":"Shirisha",
+      "age":70,
+      "city":"Nalgonda"
+   },
+   {
+      "id":26,
+      "name":"Zaik",
+      "age": 50,
       "city":"Warangal"
    }
+
 ]

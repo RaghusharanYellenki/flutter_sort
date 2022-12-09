@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_task_finn/screens/list_screen.dart';
 import 'package:flutter_task_finn/screens/login.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -31,7 +32,6 @@ class _RegisterState extends State<Register> {
   register() async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-
       try {
         UserCredential user = await _auth.createUserWithEmailAndPassword(
             email: email!, password: password!);
@@ -41,7 +41,7 @@ class _RegisterState extends State<Register> {
         }
       }
       catch (e) {
-        print(e);
+        Fluttertoast.showToast(msg: e.toString());
       }
     }
   }
@@ -192,9 +192,17 @@ class _RegisterState extends State<Register> {
                             Expanded(
                               child: Container(
                                 child: TextFormField(
-                                    validator: (input) {
-                                      if (input!.length < 6) {
-                                        return 'Provide Minimum 6 Character';
+                                    validator: (PassCurrentValue){
+                                      RegExp regex=RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+                                      var passNonNullValue=PassCurrentValue??"";
+                                      if(passNonNullValue.isEmpty){
+                                        return ("Password is required");
+                                      }
+                                      else if(passNonNullValue.length<7){
+                                        return ("Password Must be more than 6 characters");
+                                      }
+                                      else if(!regex.hasMatch(passNonNullValue)){
+                                        return ("Password should contain upper,lower,digit and Special character ");
                                       }
                                       return null;
                                     },
