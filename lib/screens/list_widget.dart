@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task_finn/userlist_model.dart';
+import 'package:flutter_task_finn/model/userlist_model.dart';
 
 class ListWidget extends StatefulWidget {
   List<UserListModel> items =[];

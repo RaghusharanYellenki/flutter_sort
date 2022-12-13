@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task_finn/bottomsheetwidget.dart';
+import 'package:flutter_task_finn/service/get_data.dart';
+import 'package:flutter_task_finn/widgets/bottomsheetwidget.dart';
 import 'package:flutter_task_finn/screens/list_widget.dart';
-import 'package:flutter_task_finn/userlist_model.dart';
-import 'package:flutter/services.dart' as rootBundle;
-import 'dart:convert';
+import 'package:flutter_task_finn/model/userlist_model.dart';
+
 
 class ListHomeScreen extends StatefulWidget {
   const ListHomeScreen({Key? key}) : super(key: key);
@@ -15,13 +15,37 @@ class ListHomeScreen extends StatefulWidget {
 class _ListHomeScreenState extends State<ListHomeScreen> {
 
   List sortList = ["Name", "Age", "City"];
-  String selectedSort = "Name";
+  String selectedSort = "";
+  List<UserListModel> dataList = [];
   List<UserListModel> userList = [];
+
+  getDataList() async {
+    dataList = await GetDataService().getUserList();
+    setState(() {
+
+    });
+    userList = dataList;
+    sortData();
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    ReadJsonData();
+    selectedSort = "Name";
+    getDataList();
+  }
+
+  sortData(){
+    setState(() {
+      if(selectedSort == "Name"){
+        userList.sort((a,b) => a.name!.compareTo(b.name!));
+      }else if(selectedSort == "Age"){
+        userList.sort((a,b) => a.age!.compareTo(b.age!));
+      }else{
+        userList.sort((a,b) => a.city!.compareTo(b.city!));
+      }
+    });
   }
 
   updatelist(list , string){
@@ -33,13 +57,13 @@ class _ListHomeScreenState extends State<ListHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: new AppBar(
+        appBar: AppBar(
           title: Text('UserList screen'),
           backgroundColor: Colors.blue,
           automaticallyImplyLeading: false,
         ),
         backgroundColor: Colors.blueGrey,
-        body: userList.isEmpty ? Center(
+        body: userList.isEmpty ? const Center(
           child: CircularProgressIndicator(),
         )
             : updatelist(userList , selectedSort),
@@ -52,29 +76,12 @@ class _ListHomeScreenState extends State<ListHomeScreen> {
             onSelectedText: (String updatedSort) {
               setState(() {
                 selectedSort = updatedSort;
-                print(selectedSort);
-                userList.clear();
-                ReadJsonData();
-;              });
+                sortData();
+              });
             },
           ),
         ],
       ),
     );
-  }
-
-  ReadJsonData() async {
-    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/userlist.json');
-    final list = json.decode(jsondata) as List<dynamic>;
-    userList = list.map((e) => UserListModel.fromJson(e)).toList();
-    setState(() {
-      if(selectedSort == "Name"){
-        userList.sort((a,b) => a.name!.compareTo(b.name!));
-      }else if(selectedSort == "Age"){
-        userList.sort((a,b) => a.age!.compareTo(b.age!));
-      }else{
-        userList.sort((a,b) => a.city!.compareTo(b.city!));
-      }
-    });
   }
 }
